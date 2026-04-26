@@ -5,19 +5,19 @@ using System.Net;
 using System.Text;
 using Google.Protobuf;
 using Grpc.Core;
-using LabAcacia.GrpcBridge;
-using LabAcacia.GrpcBridge.Generated;
+using LabAcacia.GrpcIngress;
+using LabAcacia.GrpcIngress.Generated;
 using Xunit;
 
-namespace LabAcacia.GrpcBridge.Tests;
+namespace LabAcacia.GrpcIngress.Tests;
 
 /// <summary>
-/// Unit tests for <see cref="NwpBridgeService"/>. The upstream NWP node is replaced
+/// Unit tests for <see cref="NwpIngressService"/>. The upstream NWP node is replaced
 /// by a <see cref="StubHandler"/> so tests run without Kestrel or real HTTP I/O.
 /// The gRPC <c>ServerCallContext</c> is fabricated with
 /// <see cref="TestServerCallContext.Create"/>.
 /// </summary>
-public sealed class NwpBridgeServiceTests
+public sealed class NwpIngressServiceTests
 {
     // ── GetManifest ──────────────────────────────────────────────────────────
 
@@ -234,7 +234,7 @@ public sealed class NwpBridgeServiceTests
     {
         var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
         Assert.Throws<InvalidOperationException>(() =>
-            services.AddGrpcBridge(o => o.Upstreams = new[]
+            services.AddGrpcIngress(o => o.Upstreams = new[]
             {
                 new NwpUpstream { Name = "a", BaseUrl = new Uri("https://a.test") },
                 new NwpUpstream { Name = "a", BaseUrl = new Uri("https://b.test") },
@@ -246,7 +246,7 @@ public sealed class NwpBridgeServiceTests
     {
         var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
         Assert.Throws<InvalidOperationException>(() =>
-            services.AddGrpcBridge(_ => { /* leave Upstreams empty */ }));
+            services.AddGrpcIngress(_ => { /* leave Upstreams empty */ }));
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
@@ -254,19 +254,19 @@ public sealed class NwpBridgeServiceTests
     private static UpstreamContext Ctx(string upstream, string? agentNid = null)
         => new() { Upstream = upstream, AgentNid = agentNid ?? string.Empty };
 
-    private static (NwpBridgeService svc, StubHandler handler) BuildService(
+    private static (NwpIngressService svc, StubHandler handler) BuildService(
         StubHandler handler, int? maxPayload = null)
     {
         var upstream = handler.NodeType == "memory"
             ? new NwpUpstream { Name = "products", BaseUrl = new Uri("https://memory.test/products") }
             : new NwpUpstream { Name = "orders",   BaseUrl = new Uri("https://action.test/orders") };
 
-        var opts = new GrpcBridgeOptions { Upstreams = new[] { upstream } };
+        var opts = new GrpcIngressOptions { Upstreams = new[] { upstream } };
         if (maxPayload is int mp) opts.MaxPayloadBytes = mp;
 
         var client = new NwpUpstreamClient(new HttpClient(handler), upstream);
         var clients = new Dictionary<string, NwpUpstreamClient> { [upstream.Name] = client };
-        return (new NwpBridgeService(opts, clients), handler);
+        return (new NwpIngressService(opts, clients), handler);
     }
 }
 
@@ -274,7 +274,7 @@ public sealed class NwpBridgeServiceTests
 
 /// <summary>
 /// In-memory HTTP handler that mimics an NWP Memory or Action Node. Mirrors
-/// <c>LabAcacia.McpBridge.Tests.StubHandler</c> so the two bridges' test fixtures
+/// <c>LabAcacia.McpIngress.Tests.StubHandler</c> so the two ingresses' test fixtures
 /// stay recognisably similar.
 /// </summary>
 internal sealed class StubHandler : HttpMessageHandler

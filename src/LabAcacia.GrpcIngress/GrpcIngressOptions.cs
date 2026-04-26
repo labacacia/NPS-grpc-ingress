@@ -1,11 +1,11 @@
 // Copyright 2026 INNO LOTUS PTY LTD
 // SPDX-License-Identifier: Apache-2.0
 
-namespace LabAcacia.GrpcBridge;
+namespace LabAcacia.GrpcIngress;
 
 /// <summary>
-/// Declares one NWP node that the gRPC bridge should expose to gRPC clients.
-/// Identical in shape to <c>LabAcacia.McpBridge.NwpUpstream</c> — the two
+/// Declares one NWP node that the gRPC ingress should expose to gRPC clients.
+/// Identical in shape to <c>LabAcacia.McpIngress.NwpUpstream</c> — the two
 /// bridges share the upstream configuration surface so operators can lift one
 /// config block and reuse it across protocols.
 /// </summary>
@@ -25,14 +25,14 @@ public sealed record NwpUpstream
     public string? AuthHeader { get; init; }
 }
 
-/// <summary>Configuration for the gRPC bridge server.</summary>
-public sealed class GrpcBridgeOptions
+/// <summary>Configuration for the gRPC ingress server.</summary>
+public sealed class GrpcIngressOptions
 {
     /// <summary>One or more NWP nodes to expose.</summary>
     public required IReadOnlyList<NwpUpstream> Upstreams { get; set; }
 
     /// <summary>
-    /// Max bytes the bridge will accept in a single Invoke / Query payload.
+    /// Max bytes the ingress will accept in a single Invoke / Query payload.
     /// Defaults to 4 MiB which matches gRPC's default max-receive-size.
     /// </summary>
     public int MaxPayloadBytes { get; set; } = 4 * 1024 * 1024;

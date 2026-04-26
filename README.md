@@ -1,8 +1,8 @@
 English | [中文版](./README.cn.md)
 
-# LabAcacia.GrpcBridge
+# LabAcacia.GrpcIngress
 
-[![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcBridge.svg)](https://www.nuget.org/packages/LabAcacia.GrpcBridge)
+[![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcIngress.svg)](https://www.nuget.org/packages/LabAcacia.GrpcIngress)
 
 An **ASP.NET Core library** that exposes one or more **NPS NWP nodes** as a
 single **gRPC service**. gRPC / protobuf clients — from any language with a
@@ -10,7 +10,7 @@ protoc plugin — can read from NWP Memory Nodes, invoke NWP Action / Complex /
 Gateway Nodes, and list available actions without knowing anything about
 NPS's native wire format.
 
-- **Protocol**: gRPC over HTTP/2, service package `labacacia.grpc_bridge.v1`.
+- **Protocol**: gRPC over HTTP/2, service package `labacacia.grpc_ingress.v1`.
 - **Target**: .NET 10, ASP.NET Core.
 - **NWP spec**: `spec/NPS-2-NWP.md` v0.5.
 
@@ -40,7 +40,7 @@ node's `AnchorFrame` and layer them on top of this service.
 ## Install
 
 ```bash
-dotnet add package LabAcacia.GrpcBridge
+dotnet add package LabAcacia.GrpcIngress
 ```
 
 ---
@@ -48,11 +48,11 @@ dotnet add package LabAcacia.GrpcBridge
 ## Quick start
 
 ```csharp
-using LabAcacia.GrpcBridge;
+using LabAcacia.GrpcIngress;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpcBridge(o =>
+builder.Services.AddGrpcIngress(o =>
 {
     o.Upstreams = new[]
     {
@@ -70,7 +70,7 @@ builder.Services.AddGrpcBridge(o =>
 });
 
 var app = builder.Build();
-app.MapGrpcBridge();
+app.MapGrpcIngress();
 app.Run();
 ```
 
@@ -78,7 +78,7 @@ On the client side (C# example; other languages compile the same `.proto`):
 
 ```csharp
 using Grpc.Net.Client;
-using LabAcacia.GrpcBridge.Generated;
+using LabAcacia.GrpcIngress.Generated;
 
 using var channel = GrpcChannel.ForAddress("https://localhost:5001");
 var client = new NwpBridge.NwpBridgeClient(channel);
@@ -128,7 +128,7 @@ representation.
 - **Reflection / gRPC descriptors**: the service is intentionally small
   enough that generated `.proto` artifacts suffice; `grpcurl` users can
   point at the `.proto` directly.
-- **Auth**: the bridge forwards `Authorization` / `X-NWP-Agent` headers
+- **Auth**: the ingress forwards `Authorization` / `X-NWP-Agent` headers
   from its configuration; host-level auth (TLS, gRPC interceptors, API
   gateway) is expected to be layered by the deployer.
 

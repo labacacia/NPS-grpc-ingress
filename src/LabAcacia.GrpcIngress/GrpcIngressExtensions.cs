@@ -5,28 +5,28 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace LabAcacia.GrpcBridge;
+namespace LabAcacia.GrpcIngress;
 
-/// <summary>DI + pipeline extensions for the gRPC bridge.</summary>
-public static class GrpcBridgeExtensions
+/// <summary>DI + pipeline extensions for the gRPC ingress.</summary>
+public static class GrpcIngressExtensions
 {
     /// <summary>
-    /// Register the gRPC bridge service with the given upstream configuration.
+    /// Register the gRPC ingress service with the given upstream configuration.
     /// Each upstream gets its own typed <c>HttpClient</c> via <c>IHttpClientFactory</c>.
-    /// Call <see cref="MapGrpcBridge"/> in your pipeline to expose the service over gRPC.
+    /// Call <see cref="MapGrpcIngress"/> in your pipeline to expose the service over gRPC.
     /// </summary>
-    public static IServiceCollection AddGrpcBridge(
+    public static IServiceCollection AddGrpcIngress(
         this IServiceCollection services,
-        Action<GrpcBridgeOptions> configure)
+        Action<GrpcIngressOptions> configure)
     {
-        var opts = new GrpcBridgeOptions { Upstreams = Array.Empty<NwpUpstream>() };
+        var opts = new GrpcIngressOptions { Upstreams = Array.Empty<NwpUpstream>() };
         configure(opts);
         if (opts.Upstreams.Count == 0)
-            throw new InvalidOperationException("GrpcBridgeOptions.Upstreams MUST contain at least one entry.");
+            throw new InvalidOperationException("GrpcIngressOptions.Upstreams MUST contain at least one entry.");
 
         var dup = opts.Upstreams.GroupBy(u => u.Name).FirstOrDefault(g => g.Count() > 1);
         if (dup is not null)
-            throw new InvalidOperationException($"Duplicate upstream name '{dup.Key}' in GrpcBridgeOptions.Upstreams.");
+            throw new InvalidOperationException($"Duplicate upstream name '{dup.Key}' in GrpcIngressOptions.Upstreams.");
 
         services.AddSingleton(opts);
         services.AddHttpClient();
@@ -40,18 +40,18 @@ public static class GrpcBridgeExtensions
                 u => new NwpUpstreamClient(http.CreateClient($"grpc-bridge:{u.Name}"), u));
         });
 
-        services.AddSingleton<NwpBridgeService>();
+        services.AddSingleton<NwpIngressService>();
 
         return services;
     }
 
     /// <summary>
-    /// Register the gRPC service endpoint for <see cref="NwpBridgeService"/>.
+    /// Register the gRPC service endpoint for <see cref="NwpIngressService"/>.
     /// The service is served at its default path
-    /// <c>/labacacia.grpc_bridge.v1.NwpBridge</c>.
+    /// <c>/labacacia.grpc_ingress.v1.NwpIngress</c>.
     /// </summary>
-    public static GrpcServiceEndpointConventionBuilder MapGrpcBridge(this IEndpointRouteBuilder endpoints)
+    public static GrpcServiceEndpointConventionBuilder MapGrpcIngress(this IEndpointRouteBuilder endpoints)
     {
-        return endpoints.MapGrpcService<NwpBridgeService>();
+        return endpoints.MapGrpcService<NwpIngressService>();
     }
 }

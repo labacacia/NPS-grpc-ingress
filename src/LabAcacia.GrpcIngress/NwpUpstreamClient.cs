@@ -4,11 +4,11 @@
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace LabAcacia.GrpcBridge;
+namespace LabAcacia.GrpcIngress;
 
 /// <summary>
 /// Thin typed client for a single upstream NWP node. Forwards bytes verbatim
-/// — the bridge does not re-encode JSON payloads between the gRPC wire and
+/// — the ingress does not re-encode JSON payloads between the gRPC wire and
 /// the upstream HTTP call.
 /// </summary>
 public sealed class NwpUpstreamClient
