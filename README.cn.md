@@ -1,15 +1,15 @@
 [English Version](./README.md) | 中文版
 
-# LabAcacia.GrpcBridge
+# LabAcacia.GrpcIngress
 
-[![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcBridge.svg)](https://www.nuget.org/packages/LabAcacia.GrpcBridge)
+[![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcIngress.svg)](https://www.nuget.org/packages/LabAcacia.GrpcIngress)
 
 一个 **ASP.NET Core 库**，把一个或多个 **NPS NWP 节点** 暴露成一个 **gRPC
 服务**。任何有 protoc 插件的语言写的 gRPC / protobuf 客户端都能读 NWP
 Memory Node、调用 NWP Action / Complex / Gateway Node、列出可用 action，
 而无需了解 NPS 原生 wire 格式。
 
-- **协议**：gRPC over HTTP/2，服务包 `labacacia.grpc_bridge.v1`。
+- **协议**：gRPC over HTTP/2，服务包 `labacacia.grpc_ingress.v1`。
 - **目标**：.NET 10，ASP.NET Core。
 - **NWP 规范**：`spec/NPS-2-NWP.md` v0.5。
 
@@ -38,7 +38,7 @@ NWP 的 schema 在 **运行时** 通过 `AnchorFrame` + `/.schema` 声明。
 ## 安装
 
 ```bash
-dotnet add package LabAcacia.GrpcBridge
+dotnet add package LabAcacia.GrpcIngress
 ```
 
 ---
@@ -46,11 +46,11 @@ dotnet add package LabAcacia.GrpcBridge
 ## 快速开始
 
 ```csharp
-using LabAcacia.GrpcBridge;
+using LabAcacia.GrpcIngress;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpcBridge(o =>
+builder.Services.AddGrpcIngress(o =>
 {
     o.Upstreams = new[]
     {
@@ -68,7 +68,7 @@ builder.Services.AddGrpcBridge(o =>
 });
 
 var app = builder.Build();
-app.MapGrpcBridge();
+app.MapGrpcIngress();
 app.Run();
 ```
 
@@ -76,7 +76,7 @@ app.Run();
 
 ```csharp
 using Grpc.Net.Client;
-using LabAcacia.GrpcBridge.Generated;
+using LabAcacia.GrpcIngress.Generated;
 
 using var channel = GrpcChannel.ForAddress("https://localhost:5001");
 var client = new NwpBridge.NwpBridgeClient(channel);

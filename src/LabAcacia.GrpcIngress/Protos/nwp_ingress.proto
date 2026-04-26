@@ -1,7 +1,7 @@
 // Copyright 2026 INNO LOTUS PTY LTD
 // SPDX-License-Identifier: Apache-2.0
 //
-// NPS NWP ↔ gRPC bridge — generic passthrough service.
+// NPS NWP ↔ gRPC ingress — generic passthrough service.
 //
 // Why bytes-carrying instead of typed messages:
 //   NWP schemas are declared at runtime via AnchorFrame + /.schema. A typed
@@ -13,15 +13,15 @@
 
 syntax = "proto3";
 
-package labacacia.grpc_bridge.v1;
+package labacacia.grpc_ingress.v1;
 
-option csharp_namespace = "LabAcacia.GrpcBridge.Generated";
+option csharp_namespace = "LabAcacia.GrpcIngress.Generated";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Service
 // ─────────────────────────────────────────────────────────────────────────────
 
-service NwpBridge {
+service NwpIngress {
   // Fetch the upstream NWP node's manifest (GET /.nwm).
   rpc GetManifest(ManifestRequest) returns (ManifestResponse);
 

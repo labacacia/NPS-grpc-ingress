@@ -4,28 +4,28 @@
 using System.Text.Json;
 using Google.Protobuf;
 using Grpc.Core;
-using LabAcacia.GrpcBridge.Generated;
+using LabAcacia.GrpcIngress.Generated;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace LabAcacia.GrpcBridge;
+namespace LabAcacia.GrpcIngress;
 
 /// <summary>
-/// Implementation of the generated <see cref="NwpBridge.NwpBridgeBase"/> service.
+/// Implementation of the generated <see cref="NwpIngress.NwpIngressBase"/> service.
 /// Each RPC resolves the configured upstream by <c>ctx.upstream</c>, forwards the
 /// request verbatim (bytes in, bytes out), and maps HTTP / transport errors to
 /// gRPC status codes.
 /// </summary>
-public sealed class NwpBridgeService : NwpBridge.NwpBridgeBase
+public sealed class NwpIngressService : NwpIngress.NwpIngressBase
 {
     private readonly IReadOnlyDictionary<string, NwpUpstreamClient> _clients;
-    private readonly GrpcBridgeOptions _options;
+    private readonly GrpcIngressOptions _options;
     private readonly ILogger _log;
 
-    public NwpBridgeService(
-        GrpcBridgeOptions options,
+    public NwpIngressService(
+        GrpcIngressOptions options,
         IReadOnlyDictionary<string, NwpUpstreamClient> clients,
-        ILogger<NwpBridgeService>? logger = null)
+        ILogger<NwpIngressService>? logger = null)
     {
         _options = options;
         _clients = clients;
