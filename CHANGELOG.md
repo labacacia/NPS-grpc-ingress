@@ -10,6 +10,26 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.4] — 2026-04-30
+
+### Synced
+
+- Version bumped 1.0.0-alpha.3 → 1.0.0-alpha.4 in lockstep with the
+  rest of the NPS suite. No functional changes in gRPC Ingress itself.
+- `LabAcacia.NPS.NWP` dependency follows to alpha.4, picking up
+  `LabAcacia.NPS.NWP.Anchor` topology query types (NPS-CR-0002) at
+  the SDK layer. gRPC Ingress does not surface those over the
+  `nwp_ingress.proto` wire shape at alpha.4.
+- 15 tests still green.
+
+### Summary
+
+- Exposes NWP Memory / Action / Complex Nodes as gRPC services per the
+  `nwp_ingress.proto` schema. External gRPC clients can call NPS Nodes
+  without an NPS SDK on the client side.
+
+---
+
 ## [1.0.0-alpha.3] — 2026-04-26
 
 ### Renamed (BREAKING)
@@ -52,4 +72,6 @@ approachable from the existing gRPC / protobuf ecosystem. The bridge is
 the two protocol philosophies (compile-time vs. runtime schema) coexist
 without forcing a conversion on either side.
 
+[1.0.0-alpha.4]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
+[1.0.0-alpha.3]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
 [0.1.0-alpha.1]: https://github.com/LabAcacia/nps/releases/tag/v0.1.0-alpha.1

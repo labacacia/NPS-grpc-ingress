@@ -81,7 +81,7 @@ using Grpc.Net.Client;
 using LabAcacia.GrpcIngress.Generated;
 
 using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-var client = new NwpBridge.NwpBridgeClient(channel);
+var client = new NwpIngress.NwpIngressClient(channel);
 
 var resp = await client.InvokeAsync(new InvokeRequest
 {
@@ -134,6 +134,13 @@ representation.
 
 ---
 
+## Further reading
+
+- [gRPC Ingress deep dive](../../docs/compat/grpc-ingress.en.md) — bytes-passthrough rationale, dual error-mapping policy, multi-language clients, layering strong-typed proto, deployment notes
+- [Compat ingresses overview](../../docs/compat/index.en.md) — when to pick MCP / A2A / gRPC
+
+---
+
 ## License
 
-Apache-2.0. See [`LICENSE`](./LICENSE) and [`NOTICE`](./NOTICE).
+Apache-2.0. See [`LICENSE`](../../LICENSE) and [`NOTICE`](../../NOTICE).
