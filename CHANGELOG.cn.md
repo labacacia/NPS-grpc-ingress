@@ -10,6 +10,24 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 
 ---
 
+## [1.0.0-alpha.4] —— 2026-04-30
+
+### 同步
+
+- 版本随 NPS 套件升至 1.0.0-alpha.4，本包自身无功能变更。
+- `LabAcacia.NPS.NWP` 依赖跟进至 alpha.4，SDK 层带来
+  `LabAcacia.NPS.NWP.Anchor` topology 查询类型（NPS-CR-0002）。
+  alpha.4 时 gRPC Ingress 不通过 `nwp_ingress.proto` 暴露这些查询。
+- 15 tests 仍全绿。
+
+### 摘要
+
+- 把 NWP Memory / Action / Complex Node 暴露为按 `nwp_ingress.proto`
+  schema 实现的 gRPC 服务，外部 gRPC 客户端不依赖 NPS SDK 即可调用
+  NPS Node。
+
+---
+
 ## [1.0.0-alpha.3] —— 2026-04-26
 
 ### 重命名（破坏性）
@@ -48,4 +66,6 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 消费。本桥采用**通用**形态——调用方把动态 NWP payload 继续以 `bytes`
 携带——让两种哲学（编译期 vs 运行时 schema）共存，不强迫任一侧转换。
 
+[1.0.0-alpha.4]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
+[1.0.0-alpha.3]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
 [0.1.0-alpha.1]: https://github.com/LabAcacia/nps/releases/tag/v0.1.0-alpha.1

@@ -6,7 +6,7 @@ namespace LabAcacia.GrpcIngress;
 /// <summary>
 /// Declares one NWP node that the gRPC ingress should expose to gRPC clients.
 /// Identical in shape to <c>LabAcacia.McpIngress.NwpUpstream</c> — the two
-/// bridges share the upstream configuration surface so operators can lift one
+/// ingresses share the upstream configuration surface so operators can lift one
 /// config block and reuse it across protocols.
 /// </summary>
 public sealed record NwpUpstream

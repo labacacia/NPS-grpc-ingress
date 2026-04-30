@@ -79,7 +79,7 @@ using Grpc.Net.Client;
 using LabAcacia.GrpcIngress.Generated;
 
 using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-var client = new NwpBridge.NwpBridgeClient(channel);
+var client = new NwpIngress.NwpIngressClient(channel);
 
 var resp = await client.InvokeAsync(new InvokeRequest
 {
@@ -128,6 +128,13 @@ Console.WriteLine($"http={resp.HttpStatus}, body={resp.BodyJson.ToStringUtf8()}"
 
 ---
 
+## 扩展阅读
+
+- [gRPC Ingress 详解](../../docs/compat/grpc-ingress.md) — bytes 透传原理、双错误映射策略、多语言 client、强类型 proto 叠加、部署注意
+- [桥层总览](../../docs/compat/index.md) — MCP / A2A / gRPC 何时选哪个
+
+---
+
 ## 许可证
 
-Apache-2.0。参见 [`LICENSE`](./LICENSE) 和 [`NOTICE`](./NOTICE)。
+Apache-2.0。参见 [`LICENSE`](../../LICENSE) 和 [`NOTICE`](../../NOTICE)。

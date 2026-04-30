@@ -274,7 +274,7 @@ public sealed class NwpIngressServiceTests
 
 /// <summary>
 /// In-memory HTTP handler that mimics an NWP Memory or Action Node. Mirrors
-/// <c>LabAcacia.McpIngress.Tests.StubHandler</c> so the two ingresses' test fixtures
+/// <c>LabAcacia.McpIngress.Tests.StubHandler</c> so the two ingresses. test fixtures
 /// stay recognisably similar.
 /// </summary>
 internal sealed class StubHandler : HttpMessageHandler

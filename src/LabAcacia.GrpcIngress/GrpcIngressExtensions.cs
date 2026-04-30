@@ -37,7 +37,7 @@ public static class GrpcIngressExtensions
             var http = sp.GetRequiredService<IHttpClientFactory>();
             return opts.Upstreams.ToDictionary(
                 u => u.Name,
-                u => new NwpUpstreamClient(http.CreateClient($"grpc-bridge:{u.Name}"), u));
+                u => new NwpUpstreamClient(http.CreateClient($"grpc-ingress:{u.Name}"), u));
         });
 
         services.AddSingleton<NwpIngressService>();

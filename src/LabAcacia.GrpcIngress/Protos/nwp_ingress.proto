@@ -6,7 +6,7 @@
 // Why bytes-carrying instead of typed messages:
 //   NWP schemas are declared at runtime via AnchorFrame + /.schema. A typed
 //   .proto would force every NWP action into a compile-time schema that
-//   doesn't exist yet at code-gen time. The bridge therefore exposes a
+//   doesn't exist yet at code-gen time. The ingress therefore exposes a
 //   handful of generic RPCs whose payloads are JSON-encoded NWP frame
 //   bodies. Callers wanting compile-time typing can generate their own
 //   .proto files from AnchorFrame and layer them on top of this service.
@@ -52,7 +52,7 @@ message UpstreamContext {
   // Forwarded as Idempotency-Key on /invoke. Caller-chosen.
   string idempotency_key = 3;
 
-  // W3C traceparent (forwarded as-is). The bridge generates a new child
+  // W3C traceparent (forwarded as-is). The ingress generates a new child
   // span_id before sending if this is empty.
   string traceparent = 4;
 }
