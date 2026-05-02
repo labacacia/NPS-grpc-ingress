@@ -9,7 +9,7 @@
     <RootNamespace>LabAcacia.GrpcIngress</RootNamespace>
     <PackageId>LabAcacia.GrpcIngress</PackageId>
     <AssemblyName>LabAcacia.GrpcIngress</AssemblyName>
-    <Version>1.0.0-alpha.4</Version>
+    <Version>1.0.0-alpha.5</Version>
     <Description>gRPC ↔ NWP ingress: exposes NPS NWP Memory / Action / Complex / Gateway Nodes as a generic gRPC service with bytes-carrying payloads. Addresses the "NPS should integrate with gRPC/protobuf" review comment without forcing a compile-time schema on top of NWP's runtime AnchorFrame model.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Authors>LabAcacia / INNO LOTUS PTY LTD</Authors>

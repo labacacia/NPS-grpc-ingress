@@ -10,6 +10,20 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.5] — 2026-05-01
+
+### Synced
+
+- Version bumped 1.0.0-alpha.4 → 1.0.0-alpha.5 in lockstep with the
+  rest of the NPS suite. No functional changes in gRPC Ingress itself.
+- Suite highlights at alpha.5: nps-ledger Phase 3 STH gossip federation,
+  `AnchorNodeMiddleware` `node_kind` deprecation warning (alias removed at
+  alpha.6), NDP DNS TXT fallback across all six SDKs, 30 new NWP error
+  code constants.
+- 15 tests still green.
+
+---
+
 ## [1.0.0-alpha.4] — 2026-04-30
 
 ### Synced
@@ -72,6 +86,7 @@ approachable from the existing gRPC / protobuf ecosystem. The bridge is
 the two protocol philosophies (compile-time vs. runtime schema) coexist
 without forcing a conversion on either side.
 
+[1.0.0-alpha.5]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.5
 [1.0.0-alpha.4]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
 [1.0.0-alpha.3]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
 [0.1.0-alpha.1]: https://github.com/LabAcacia/nps/releases/tag/v0.1.0-alpha.1

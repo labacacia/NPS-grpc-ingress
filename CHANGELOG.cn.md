@@ -1,12 +1,24 @@
 [English Version](./CHANGELOG.md) | 中文版
 
-# 更新日志 — gRPC Bridge (`LabAcacia.GrpcIngress`)
+# 更新日志 — gRPC Ingress (`LabAcacia.GrpcIngress`)
 
 格式遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [SemVer](https://semver.org/lang/zh-CN/spec/v2.0.0.html)。
 
 NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 pre-release
 版本号。
+
+---
+
+## [1.0.0-alpha.5] —— 2026-05-01
+
+### 同步
+
+- 版本随 NPS 套件升至 1.0.0-alpha.5，本包自身无功能变更。
+- 套件 alpha.5 亮点：nps-ledger Phase 3 STH gossip 联邦、
+  `AnchorNodeMiddleware` `node_kind` 弃用警告（alpha.6 移除别名）、
+  六个 SDK 的 NDP DNS TXT 回退解析、30 个新 NWP 错误码常量。
+- 15 tests 仍全绿。
 
 ---
 
@@ -66,6 +78,7 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 消费。本桥采用**通用**形态——调用方把动态 NWP payload 继续以 `bytes`
 携带——让两种哲学（编译期 vs 运行时 schema）共存，不强迫任一侧转换。
 
+[1.0.0-alpha.5]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.5
 [1.0.0-alpha.4]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
 [1.0.0-alpha.3]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
 [0.1.0-alpha.1]: https://github.com/LabAcacia/nps/releases/tag/v0.1.0-alpha.1
