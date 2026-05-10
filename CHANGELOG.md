@@ -21,6 +21,10 @@ the same pre-release version tag.
   alpha.6), NDP DNS TXT fallback across all six SDKs, 30 new NWP error
   code constants.
 - 15 tests still green.
+- Tracks suite consolidation: alpha.5.2 tracking-only sub-version folded
+  back into alpha.5 (refs #28). Per the no-sub-versions policy, any
+  per-package sub-patch label is dropped and its content merged into the
+  parent suite version.
 
 ---
 

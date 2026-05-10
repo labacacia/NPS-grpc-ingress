@@ -19,6 +19,8 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
   `AnchorNodeMiddleware` `node_kind` 弃用警告（alpha.6 移除别名）、
   六个 SDK 的 NDP DNS TXT 回退解析、30 个新 NWP 错误码常量。
 - 15 tests 仍全绿。
+- 跟踪套件合并：alpha.5.2 仅用于跟踪的子版本已合回 alpha.5（refs #28）。
+  按"不允许逐包子版本"策略，子补丁号统一回收，内容并入父套件版本。
 
 ---
 
