@@ -10,6 +10,14 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.6] — 2026-05-12
+
+### Changed
+
+- Version bumped to `1.0.0-alpha.6` in lockstep with the NPS suite. No package-specific API changes.
+
+---
+
 ## [1.0.0-alpha.5] — 2026-05-01
 
 ### Synced
@@ -90,6 +98,7 @@ approachable from the existing gRPC / protobuf ecosystem. The bridge is
 the two protocol philosophies (compile-time vs. runtime schema) coexist
 without forcing a conversion on either side.
 
+[1.0.0-alpha.6]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.6
 [1.0.0-alpha.5]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.5
 [1.0.0-alpha.4]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
 [1.0.0-alpha.3]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
