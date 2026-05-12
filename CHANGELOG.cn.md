@@ -10,6 +10,14 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 
 ---
 
+## [1.0.0-alpha.6] —— 2026-05-12
+
+### Changed
+
+- 版本随 NPS 套件升至 `1.0.0-alpha.6`。本包无单独 API 变更。
+
+---
+
 ## [1.0.0-alpha.5] —— 2026-05-01
 
 ### 同步
@@ -80,6 +88,7 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 消费。本桥采用**通用**形态——调用方把动态 NWP payload 继续以 `bytes`
 携带——让两种哲学（编译期 vs 运行时 schema）共存，不强迫任一侧转换。
 
+[1.0.0-alpha.6]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.6
 [1.0.0-alpha.5]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.5
 [1.0.0-alpha.4]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
 [1.0.0-alpha.3]: https://gitee.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.3
