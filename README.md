@@ -136,11 +136,11 @@ representation.
 
 ## Further reading
 
-- [gRPC Ingress deep dive](../../docs/compat/grpc-ingress.en.md) — bytes-passthrough rationale, dual error-mapping policy, multi-language clients, layering strong-typed proto, deployment notes
-- [Compat ingresses overview](../../docs/compat/index.en.md) — when to pick MCP / A2A / gRPC
+- [gRPC Ingress deep dive](https://github.com/labacacia/NPS-Dev/blob/main/docs/compat/grpc-ingress.en.md) — bytes-passthrough rationale, dual error-mapping policy, multi-language clients, layering strong-typed proto, deployment notes
+- [Compat ingresses overview](https://github.com/labacacia/NPS-Dev/blob/main/docs/compat/index.en.md) — when to pick MCP / A2A / gRPC
 
 ---
 
 ## License
 
-Apache-2.0. See [`LICENSE`](../../LICENSE) and [`NOTICE`](../../NOTICE).
+Apache-2.0. See [`LICENSE`](./LICENSE) and [`NOTICE`](./NOTICE).

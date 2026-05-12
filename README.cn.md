@@ -130,11 +130,11 @@ Console.WriteLine($"http={resp.HttpStatus}, body={resp.BodyJson.ToStringUtf8()}"
 
 ## 扩展阅读
 
-- [gRPC Ingress 详解](../../docs/compat/grpc-ingress.md) — bytes 透传原理、双错误映射策略、多语言 client、强类型 proto 叠加、部署注意
-- [桥层总览](../../docs/compat/index.md) — MCP / A2A / gRPC 何时选哪个
+- [gRPC Ingress 详解](https://github.com/labacacia/NPS-Dev/blob/main/docs/compat/grpc-ingress.md) — bytes 透传原理、双错误映射策略、多语言 client、强类型 proto 叠加、部署注意
+- [桥层总览](https://github.com/labacacia/NPS-Dev/blob/main/docs/compat/index.md) — MCP / A2A / gRPC 何时选哪个
 
 ---
 
 ## 许可证
 
-Apache-2.0。参见 [`LICENSE`](../../LICENSE) 和 [`NOTICE`](../../NOTICE)。
+Apache-2.0。参见 [`LICENSE`](./LICENSE) 和 [`NOTICE`](./NOTICE)。
