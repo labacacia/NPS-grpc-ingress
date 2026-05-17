@@ -10,6 +10,18 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.7] — 2026-05-17
+
+### Synced
+
+- Version bumped `1.0.0-alpha.6` → `1.0.0-alpha.7` in lockstep with the NPS suite.
+  No functional changes in gRPC Ingress itself.
+- Suite highlights at alpha.7: `ReputationLogClient` (RFC-0004 Ph2) across all six
+  SDKs; AnchorNodeClient test parity for Python / Go / Java / Rust; NIP CA Server
+  gains CR-0005 RA model database migration (`db/003_ra_model.sql`).
+
+---
+
 ## [1.0.0-alpha.6] — 2026-05-14
 
 ### Changed
@@ -98,6 +110,7 @@ approachable from the existing gRPC / protobuf ecosystem. The bridge is
 the two protocol philosophies (compile-time vs. runtime schema) coexist
 without forcing a conversion on either side.
 
+[1.0.0-alpha.7]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.7
 [1.0.0-alpha.6]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.6
 [1.0.0-alpha.5]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.5
 [1.0.0-alpha.4]: https://github.com/labacacia/NPS-grpc-ingress/releases/tag/v1.0.0-alpha.4
