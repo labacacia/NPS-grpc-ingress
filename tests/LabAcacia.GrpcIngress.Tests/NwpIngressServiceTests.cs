@@ -5,8 +5,8 @@ using System.Net;
 using System.Text;
 using Google.Protobuf;
 using Grpc.Core;
-using LabAcacia.GrpcIngress;
-using LabAcacia.GrpcIngress.Generated;
+using LabAcacia.NPS.GrpcIngress;
+using LabAcacia.NPS.GrpcIngress.Generated;
 using Xunit;
 
 namespace LabAcacia.GrpcIngress.Tests;

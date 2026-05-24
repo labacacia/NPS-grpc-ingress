@@ -4,7 +4,7 @@
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace LabAcacia.GrpcIngress;
+namespace LabAcacia.NPS.GrpcIngress;
 
 /// <summary>
 /// Thin typed client for a single upstream NWP node. Forwards bytes verbatim

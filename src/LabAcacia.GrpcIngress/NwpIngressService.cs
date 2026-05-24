@@ -8,7 +8,7 @@ using LabAcacia.GrpcIngress.Generated;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace LabAcacia.GrpcIngress;
+namespace LabAcacia.NPS.GrpcIngress;
 
 /// <summary>
 /// Implementation of the generated <see cref="NwpIngress.NwpIngressBase"/> service.

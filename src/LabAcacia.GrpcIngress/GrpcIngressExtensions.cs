@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace LabAcacia.GrpcIngress;
+namespace LabAcacia.NPS.GrpcIngress;
 
 /// <summary>DI + pipeline extensions for the gRPC ingress.</summary>
 public static class GrpcIngressExtensions
