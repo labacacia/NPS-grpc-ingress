@@ -10,6 +10,16 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.8] — 2026-05-28
+
+### Synced
+
+- Version bumped `1.0.0-alpha.7` → `1.0.0-alpha.8` in lockstep with the NPS suite.
+  No functional changes in gRPC Ingress itself.
+- Suite highlights: RFC-0005 `ReputationPolicyEvaluator` in .NET SDK; cgn_limit pre-execution enforcement; RFC-0002 and RFC-0005 promoted to Accepted.
+
+---
+
 ## [1.0.0-alpha.7] — 2026-05-17
 
 ### Synced
