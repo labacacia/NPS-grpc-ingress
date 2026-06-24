@@ -10,6 +10,11 @@ the same pre-release version tag.
 
 ---
 
+## [1.0.0-alpha.13] — 2026-06-13
+
+### Changed
+- Suite version alignment to `1.0.0-alpha.13`. No functional changes in this repository for this release; the bump keeps the whole NPS suite on a single version tag (oracle: NPS-Dev `version.yaml`).
+
 ## [1.0.0-alpha.8] — 2026-05-28
 
 ### Synced
