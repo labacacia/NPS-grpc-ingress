@@ -4,22 +4,23 @@ English | [中文版](./README.cn.md)
 
 [![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcIngress.svg)](https://www.nuget.org/packages/LabAcacia.GrpcIngress)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/badge/release-v1.0.0--alpha.8-orange.svg)](CHANGELOG.md)
-[![NCP](https://img.shields.io/badge/NCP-v0.6-5b8cff.svg)]()
-[![NWP](https://img.shields.io/badge/NWP-v0.12-4af0b0.svg)]()
-[![NIP](https://img.shields.io/badge/NIP-v0.8-7b61ff.svg)]()
-[![NDP](https://img.shields.io/badge/NDP-v0.7-f0a050.svg)]()
-[![NOP](https://img.shields.io/badge/NOP-v0.5-ff8c42.svg)]()
+[![Release](https://img.shields.io/badge/release-v1.0.0--alpha.13-orange.svg)](CHANGELOG.md)
+[![Next](https://img.shields.io/badge/next-v1.0.0--alpha.14--candidate-yellow.svg)](CHANGELOG.md#100-alpha14--unreleased)
+[![NCP](https://img.shields.io/badge/NCP-v0.8-5b8cff.svg)]()
+[![NWP](https://img.shields.io/badge/NWP-v0.14-4af0b0.svg)]()
+[![NIP](https://img.shields.io/badge/NIP-v0.10-7b61ff.svg)]()
+[![NDP](https://img.shields.io/badge/NDP-v0.9-f0a050.svg)]()
+[![NOP](https://img.shields.io/badge/NOP-v0.7-ff8c42.svg)]()
 
 An **ASP.NET Core library** that exposes one or more **NPS NWP nodes** as a
 single **gRPC service**. gRPC / protobuf clients — from any language with a
-protoc plugin — can read from NWP Memory Nodes, invoke NWP Action / Complex /
-Gateway Nodes, and list available actions without knowing anything about
+protoc plugin — can read from NWP Memory Nodes, invoke NWP Action / Complex
+Nodes, and list available actions without knowing anything about
 NPS's native wire format.
 
 - **Protocol**: gRPC over HTTP/2, service package `labacacia.grpc_ingress.v1`.
 - **Target**: .NET 10, ASP.NET Core.
-- **NWP spec**: `spec/NPS-2-NWP.md` v0.5.
+- **NWP spec**: `spec/NPS-2-NWP.md` v0.14.
 
 ---
 

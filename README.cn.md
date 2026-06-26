@@ -4,21 +4,22 @@
 
 [![NuGet](https://img.shields.io/nuget/v/LabAcacia.GrpcIngress.svg)](https://www.nuget.org/packages/LabAcacia.GrpcIngress)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/badge/release-v1.0.0--alpha.8-orange.svg)](CHANGELOG.cn.md)
-[![NCP](https://img.shields.io/badge/NCP-v0.6-5b8cff.svg)]()
-[![NWP](https://img.shields.io/badge/NWP-v0.12-4af0b0.svg)]()
-[![NIP](https://img.shields.io/badge/NIP-v0.8-7b61ff.svg)]()
-[![NDP](https://img.shields.io/badge/NDP-v0.7-f0a050.svg)]()
-[![NOP](https://img.shields.io/badge/NOP-v0.5-ff8c42.svg)]()
+[![Release](https://img.shields.io/badge/release-v1.0.0--alpha.13-orange.svg)](CHANGELOG.cn.md)
+[![Next](https://img.shields.io/badge/next-v1.0.0--alpha.14--candidate-yellow.svg)](CHANGELOG.cn.md#100-alpha14--unreleased)
+[![NCP](https://img.shields.io/badge/NCP-v0.8-5b8cff.svg)]()
+[![NWP](https://img.shields.io/badge/NWP-v0.14-4af0b0.svg)]()
+[![NIP](https://img.shields.io/badge/NIP-v0.10-7b61ff.svg)]()
+[![NDP](https://img.shields.io/badge/NDP-v0.9-f0a050.svg)]()
+[![NOP](https://img.shields.io/badge/NOP-v0.7-ff8c42.svg)]()
 
 一个 **ASP.NET Core 库**，把一个或多个 **NPS NWP 节点** 暴露成一个 **gRPC
 服务**。任何有 protoc 插件的语言写的 gRPC / protobuf 客户端都能读 NWP
-Memory Node、调用 NWP Action / Complex / Gateway Node、列出可用 action，
+Memory Node、调用 NWP Action / Complex Node、列出可用 action，
 而无需了解 NPS 原生 wire 格式。
 
 - **协议**：gRPC over HTTP/2，服务包 `labacacia.grpc_ingress.v1`。
 - **目标**：.NET 10，ASP.NET Core。
-- **NWP 规范**：`spec/NPS-2-NWP.md` v0.5。
+- **NWP 规范**：`spec/NPS-2-NWP.md` v0.14。
 
 ---
 

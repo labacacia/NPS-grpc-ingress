@@ -15,7 +15,7 @@ syntax = "proto3";
 
 package labacacia.grpc_ingress.v1;
 
-option csharp_namespace = "LabAcacia.GrpcIngress.Generated";
+option csharp_namespace = "LabAcacia.NPS.GrpcIngress.Generated";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Service
@@ -25,7 +25,7 @@ service NwpIngress {
   // Fetch the upstream NWP node's manifest (GET /.nwm).
   rpc GetManifest(ManifestRequest) returns (ManifestResponse);
 
-  // Invoke an Action / Complex / Gateway Node action synchronously
+  // Invoke an Action / Complex / Anchor Node action synchronously
   // (POST /invoke). Async actions returning 202 are represented in the
   // response with http_status=202 and task_id populated from the body.
   rpc Invoke(InvokeRequest) returns (InvokeResponse);
@@ -33,7 +33,7 @@ service NwpIngress {
   // Query a Memory Node (POST /query).
   rpc Query(QueryRequest) returns (QueryResponse);
 
-  // List actions on an Action / Complex / Gateway Node (GET /actions).
+  // List actions on an Action / Complex / Anchor Node (GET /actions).
   rpc ListActions(ActionsRequest) returns (ActionsResponse);
 }
 

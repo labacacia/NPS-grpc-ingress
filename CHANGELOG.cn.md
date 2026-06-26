@@ -10,6 +10,20 @@ NPS 进入 v1.0 稳定版之前，套件内所有仓库统一对齐到同一个 
 
 ---
 
+## [1.0.0-alpha.14] —— 未发布
+
+### 文档
+- README release/protocol badge 对齐套件 alpha.14 candidate 文档边界与当前协议版本。
+
+### 打包
+- NuGet 包现在产出启用 SourceLink 的 `.snupkg` 符号包，并把 README 打进包内。
+- 生成的 gRPC C# 类型统一到 `LabAcacia.NPS.GrpcIngress.Generated` namespace。
+
+## [1.0.0-alpha.13] —— 2026-06-13
+
+### 变更
+- 跟随 NPS 套件 `v1.0.0-alpha.13`；适配器行为无变化。
+
 ## [1.0.0-alpha.8] —— 2026-05-28
 
 ### 同步
