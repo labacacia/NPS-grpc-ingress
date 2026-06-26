@@ -10,19 +10,15 @@ the same pre-release version tag.
 
 ---
 
-## [1.0.0-alpha.14] — Unreleased
+## [1.0.0-alpha.14] — 2026-06-26
 
 ### Docs
-- Align README release/protocol badges with the suite alpha.14 candidate documentation boundary and current protocol versions.
+- Align README release/protocol badges with the suite alpha.14 release documentation boundary and current protocol versions.
 
-### Packaging
-- Emit SourceLink-enabled `.snupkg` symbol packages and include the README in NuGet packages.
-- Align generated gRPC C# types under the `LabAcacia.NPS.GrpcIngress.Generated` namespace.
-
-## [1.0.0-alpha.13] — 2026-06-13
+## [1.0.0-alpha.14] — 2026-06-13
 
 ### Changed
-- Suite version alignment to `1.0.0-alpha.13`. No functional changes in this repository for this release; the bump keeps the whole NPS suite on a single version tag (oracle: NPS-Dev `version.yaml`).
+- Tracks NPS suite `v1.0.0-alpha.14`; no adapter behavior changes.
 
 ## [1.0.0-alpha.8] — 2026-05-28
 

@@ -6,25 +6,29 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <RootNamespace>LabAcacia.GrpcIngress</RootNamespace>
     <PackageId>LabAcacia.GrpcIngress</PackageId>
     <AssemblyName>LabAcacia.GrpcIngress</AssemblyName>
-    <Version>1.0.0-alpha.13</Version>
-    <Description>gRPC ↔ NWP ingress: exposes NPS NWP Memory / Action / Complex / Anchor Nodes as a generic gRPC service with bytes-carrying payloads. Addresses the "NPS should integrate with gRPC/protobuf" review comment without forcing a compile-time schema on top of NWP's runtime AnchorFrame model.</Description>
+    <Version>1.0.0-alpha.14</Version>
+    <Description>gRPC ↔ NWP ingress: exposes NPS NWP Memory / Action / Complex / Gateway Nodes as a generic gRPC service with bytes-carrying payloads. Addresses the "NPS should integrate with gRPC/protobuf" review comment without forcing a compile-time schema on top of NWP's runtime AnchorFrame model.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Authors>LabAcacia / INNO LOTUS PTY LTD</Authors>
     <Company>INNO LOTUS PTY LTD</Company>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>nps;nwp;grpc;protobuf;ingress;ai;agent</PackageTags>
     <PackageProjectUrl>https://github.com/labacacia/nps</PackageProjectUrl>
     <RepositoryUrl>https://github.com/labacacia/nps</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -40,7 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../../README.md" Pack="true" PackagePath="/" />
     <Protobuf Include="Protos\nwp_ingress.proto" GrpcServices="Server" />
   </ItemGroup>
 

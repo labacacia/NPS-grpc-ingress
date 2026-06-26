@@ -4,7 +4,7 @@
 using System.Text.Json;
 using Google.Protobuf;
 using Grpc.Core;
-using LabAcacia.NPS.GrpcIngress.Generated;
+using LabAcacia.GrpcIngress.Generated;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
